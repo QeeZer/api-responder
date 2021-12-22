@@ -15,7 +15,7 @@ trait Responder
      * @param array $meta
      * @return JsonResponseBuilder
      */
-    public static function responseItem($item, $resource = null, array $meta = []): JsonResponseBuilder
+    public function responseItem($item, $resource = null, array $meta = []): JsonResponseBuilder
     {
         return ResponderFactory::responseCollection($item, $resource, $meta);
     }
@@ -27,7 +27,7 @@ trait Responder
      * @param array $meta
      * @return JsonResponseBuilder
      */
-    public static function responseCollection($collection, $resource = null, array $meta = []): JsonResponseBuilder
+    public function responseCollection($collection, $resource = null, array $meta = []): JsonResponseBuilder
     {
         return ResponderFactory::responseCollection($collection, $resource, $meta);
     }
@@ -39,7 +39,7 @@ trait Responder
      * @param array $meta
      * @return JsonResponseBuilder
      */
-    public static function responsePaginate($paginator, $resource = null, array $meta = []): JsonResponseBuilder
+    public function responsePaginate($paginator, $resource = null, array $meta = []): JsonResponseBuilder
     {
         return ResponderFactory::responsePaginate($paginator, $resource, $meta);
     }
@@ -51,7 +51,7 @@ trait Responder
      * @param string $message
      * @return JsonResponseBuilder
      */
-    public static function responseData(
+    public function responseData(
         $data,
         array $meta = [],
         string $message = ResponseEntity::DEFAULT_SUCCESS_MESSAGE
@@ -64,7 +64,7 @@ trait Responder
      * @param string $message
      * @return JsonResponseBuilder
      */
-    public static function responseSuccess(string $message = ResponseEntity::DEFAULT_SUCCESS_MESSAGE): JsonResponseBuilder
+    public function responseSuccess(string $message = ResponseEntity::DEFAULT_SUCCESS_MESSAGE): JsonResponseBuilder
     {
         return ResponderFactory::responseSuccess($message);
     }
@@ -77,7 +77,7 @@ trait Responder
      * @param int $httpStatusCode
      * @return JsonResponseBuilder
      */
-    public static function responseFail(
+    public function responseFail(
         string $message = ResponseEntity::DEFAULT_FAIL_MESSAGE,
         array $data = [],
         int $errCode = ResponseEntity::DEFAULT_FAIL_CODE,
@@ -91,7 +91,7 @@ trait Responder
      * @param Throwable $throwable
      * @return JsonResponseBuilder
      */
-    public static function responseError(Throwable $throwable): JsonResponseBuilder
+    public function responseError(Throwable $throwable): JsonResponseBuilder
     {
         return ResponderFactory::responseError($throwable);
     }
@@ -102,7 +102,7 @@ trait Responder
      * @param int $httpStatusCode
      * @return JsonResponseBuilder
      */
-    public static function responseUnauthorized(
+    public function responseUnauthorized(
         string $message = ResponseEntity::DEFAULT_UNAUTHORIZED,
         int $httpStatusCode = Response::HTTP_UNAUTHORIZED
     ): JsonResponseBuilder {
