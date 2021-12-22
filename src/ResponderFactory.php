@@ -67,6 +67,7 @@ class ResponderFactory
 
         $pagination = $paginated;
         unset(
+            $pagination['links'],
             $pagination['data'],
             $pagination['first_page_url'],
             $pagination['last_page_url'],
