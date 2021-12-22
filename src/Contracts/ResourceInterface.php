@@ -1,6 +1,6 @@
 <?php
 
-namespace QeeZer\ApiResponder\Entity\Contracts;
+namespace QeeZer\ApiResponder\Contracts;
 
 interface ResourceInterface
 {

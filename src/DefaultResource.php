@@ -2,7 +2,7 @@
 
 namespace QeeZer\ApiResponder;
 
-use QeeZer\ApiResponder\Entity\Contracts\ResourceInterface;
+use QeeZer\ApiResponder\Contracts\ResourceInterface;
 
 class DefaultResource implements ResourceInterface
 {
