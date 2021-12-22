@@ -71,6 +71,15 @@ class JsonResponseBuilder
     }
 
     /**
+     * send.
+     * @return JsonResponse
+     */
+    public function send(): JsonResponse
+    {
+        return $this->jsonResponse->send();
+    }
+
+    /**
      * responder.
      * @return JsonResponse
      */

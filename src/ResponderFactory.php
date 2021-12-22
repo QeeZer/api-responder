@@ -197,4 +197,17 @@ class ResponderFactory
         return Helpers::apiResponse(ResponseEntityFactory::responseEntity(null, null, $message))
             ->setStatus(Response::HTTP_CREATED);
     }
+
+    /**
+     * basic http response.
+     * @param string $message
+     * @param int $statusCode
+     * @return JsonResponseBuilder
+     */
+    public static function responseHttp(string $message, int $statusCode = Response::HTTP_OK): JsonResponseBuilder
+    {
+        return Helpers::apiResponse(
+            ResponseEntityFactory::responseEntity(null, null, $message, $statusCode)
+        )->setStatus($statusCode);
+    }
 }

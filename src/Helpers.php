@@ -2,7 +2,6 @@
 
 namespace QeeZer\ApiResponder;
 
-use QeeZer\ApiResponder\Entity\Contracts\ResponseEntityInterface;
 use QeeZer\ApiResponder\Entity\ResponseEntity;
 use Throwable;
 
@@ -31,6 +30,10 @@ class Helpers
         Throwable $throwable,
         callable $callback = null
     ): JsonResponseBuilder {
+        if ($throwable instanceof \Symfony\Component\HttpKernel\Exception\HttpException) {
+            return ResponderFactory::responseHttp($throwable->getMessage(), $throwable->getCode());
+        }
+
         if ($callback) {
             $throwable = $callback($request, $throwable);
         }
