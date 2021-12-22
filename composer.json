@@ -1,0 +1,23 @@
+{
+  "name": "qeezer/api-responder",
+  "description": "The api responder.",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "QeeZer\\ApiResponder\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "qeezer",
+      "email": "184353381@qq.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.2 || ^7.3 || ^7.4 || ^8",
+    "ext-json": "*",
+    "symfony/http-foundation": "^4.3.4"
+  }
+}
