@@ -118,4 +118,15 @@ trait Responder
     {
         return ResponderFactory::responseCreated($message);
     }
+
+    /**
+     * basic http response.
+     * @param string $message
+     * @param int $statusCode
+     * @return JsonResponseBuilder
+     */
+    public function responseHttp(string $message = '', int $statusCode = Response::HTTP_OK): JsonResponseBuilder
+    {
+        return ResponderFactory::responseHttp($message, $statusCode);
+    }
 }

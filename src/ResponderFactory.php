@@ -204,7 +204,7 @@ class ResponderFactory
      * @param int $statusCode
      * @return JsonResponseBuilder
      */
-    public static function responseHttp(string $message, int $statusCode = Response::HTTP_OK): JsonResponseBuilder
+    public static function responseHttp(string $message = '', int $statusCode = Response::HTTP_OK): JsonResponseBuilder
     {
         return Helpers::apiResponse(
             ResponseEntityFactory::responseEntity(null, null, $message, $statusCode)

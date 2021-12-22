@@ -31,7 +31,7 @@ class Helpers
         callable $callback = null
     ): JsonResponseBuilder {
         if ($throwable instanceof \Symfony\Component\HttpKernel\Exception\HttpException) {
-            return ResponderFactory::responseHttp($throwable->getMessage(), $throwable->getCode());
+            return ResponderFactory::responseHttp($throwable->getMessage(), $throwable->getStatusCode());
         }
 
         if ($callback) {
