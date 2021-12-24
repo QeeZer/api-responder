@@ -142,7 +142,7 @@ class ResponderFactory
     {
         $data = null;
 
-        if (function_exists('env')) {
+        if ((!$throwable instanceof BusinessException) && function_exists('env')) {
             if (env('APP_ENV') === 'local' || env('APP_DEBUG') === true) {
                 $data = (new ExceptionInfo($throwable))->getExceptionInfo();
             }
