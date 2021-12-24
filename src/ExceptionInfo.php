@@ -26,7 +26,7 @@ class ExceptionInfo
             'message' => $this->exception->getMessage(),
             'file' => $this->exception->getFile(),
             'line' => $this->exception->getLine(),
-            'trace' => $this->exception->getTrace(),
+            'trace' => $this->exception->getTraceAsString(),
         ];
     }
 }
