@@ -17,7 +17,7 @@ trait Responder
      */
     public function responseItem($item, $resource = null, array $meta = []): JsonResponseBuilder
     {
-        return ResponderFactory::responseCollection($item, $resource, $meta);
+        return ResponderFactory::responseItem($item, $resource, $meta);
     }
 
     /**
