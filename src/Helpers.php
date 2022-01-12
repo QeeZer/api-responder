@@ -34,6 +34,15 @@ class Helpers
             return ResponderFactory::responseHttp($throwable->getMessage(), $throwable->getStatusCode());
         }
 
+        if ($throwable instanceof \Illuminate\Validation\UnauthorizedException) {
+            return ResponderFactory::responseUnauthorized();
+        }
+
+        if ($throwable instanceof \Illuminate\Validation\ValidationException) {
+            $firstError = \Illuminate\Support\Arr::first(\Illuminate\Support\Arr::first($throwable->errors()));
+            return ResponderFactory::responseFail($firstError, $throwable->errors(), 422, 422);
+        }
+
         if ($callback) {
             $throwable = $callback($request, $throwable);
         }
